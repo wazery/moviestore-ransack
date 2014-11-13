@@ -20,13 +20,26 @@
         <%= f.text_field :price_lteq, class: "radius", placeholder: "Maximum Price" %>
       </div>
       <div class="column">
-        <%= f.submit "Search", class: " radius button" %>
+        <%= f.submit "Search", class: "radius button" %>
       </div>
     <% end %>
   </div>
 </div>
 
 <h4 class="column">Featured Movies</h4>
+<div class="row right padm">
+<div class="column">
+  <div class="filter-label red">
+    <%= sort_link @search, :title, "Title" %>
+  </div>
+  <div class="filter-label dark-golden-rod">
+    <%= sort_link @search, :price, "Price" %>
+  </div>
+  <div class="filter-label dark-slate-gray">
+    <%= sort_link @search, :release_year, "Release Year" %>
+  </div>
+</div>
+</div>
 <div class="column">
   <ul class="movies-grid no-bullet row">
     <% @movies.each do |movie| %>

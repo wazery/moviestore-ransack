@@ -670,9 +670,33 @@ $label-font-sizing: rem-calc(14);
 // $label-font-color-alt: #fff;
 // $label-font-family: $body-font-family;
 
-.movie-label { 
+.movie-label {
   @include label( $text-size:13px, $bg: #3D3D32 );
   color: gold;
+}
+
+.filter-label {
+  @include label( $text-size:13px );
+  opacity: .9;
+  & > a {
+    color: antiquewhite;
+    &:hover {
+      color: white;
+    }
+  }
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
+  &.red {
+    background-color: #BA0000;
+  }
+  &.golden-rod {
+    background-color: DarkGoldenRod;
+  }
+  &.dark-slate-gray {
+    background-color: Gold;
+  }
 }
 
 // Magellan
