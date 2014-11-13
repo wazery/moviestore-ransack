@@ -1,3 +1,31 @@
+<%= render "title_search_box" %>
+<div class="column">
+  <h5>
+    <a class="show-advanced-search">Advanced Search <span class="fi-plus"/></a>
+  </h5>
+</div>
+
+<div class="column">
+  <div class="advanced-search hide form-container glassy-bg columns">
+    <a class="close-advanced-search fi-x"></a>
+    <h4>Advanced Search</h4>
+    <%= search_form_for @search do |f| %>
+      <div class="large-5 small-4 columns">
+        <%= f.label :price_gteq, class: "movie-label" %>
+        <%= f.text_field :price_gteq, class: "radius", placeholder: "Minumum Price" %>
+      </div>
+      <h6 class="large-2 small-4 columns center"><span>And</span></h6>
+      <div class="large-5 small-4 columns">
+        <%= f.label :price_lteq, class: "movie-label" %>
+        <%= f.text_field :price_lteq, class: "radius", placeholder: "Maximum Price" %>
+      </div>
+      <div class="column">
+        <%= f.submit "Search", class: " radius button" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <h4 class="column">Featured Movies</h4>
 <div class="column">
   <ul class="movies-grid no-bullet row">
