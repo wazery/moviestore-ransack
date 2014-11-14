@@ -6,6 +6,8 @@ class MoviesController < ApplicationController
   def index
     @search = Movie.search(params[:q])
     @movies = @search.result
+    @search.build_condition if @search.conditions.empty?
+    @search.build_sort if @search.sorts.empty?
   end
 
   # GET /movies/1
